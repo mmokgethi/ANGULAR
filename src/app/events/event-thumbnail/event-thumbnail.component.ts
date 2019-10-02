@@ -13,7 +13,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
         <span>&nbsp;</span>
         <span>{{event.location.city}}, {{event.location.country}}</span>
       </div>
-      <button class="btn btn-primary" (click)="handleClickMe()">Click Here</button>
     </div>
   `,
   styleUrls: ['./event-thumbnail.component.css']
@@ -21,11 +20,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 export class EventThumbnailComponent implements OnInit {
   @Input() event: any;
-  @Output() eventClicked = new EventEmitter();
-
-  handleClickMe() {
-    this.eventClicked.emit('Emiter Clicked');
-  }
   constructor() { }
 
   ngOnInit() {

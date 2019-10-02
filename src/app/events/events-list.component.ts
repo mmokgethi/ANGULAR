@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   <div>
     <h1>Upcoming Tech Events</h1>
     <hr>
-    <app-event-thumbnail  (eventClicked)="handleEventClicked($event)" [event]="event1"></app-event-thumbnail>
+    <app-event-thumbnail [event]="event1"></app-event-thumbnail>
   </div>
   `,
   styleUrls: ['./events-list.component.css']
@@ -26,11 +26,7 @@ export class EventsListComponent implements OnInit {
       country: 'South Africa'
     }
   };
-
-  handleEventClicked(data: any) {
-    console.log('received: ', data);
-  }
-
+  
   constructor() { }
 
   ngOnInit() {
