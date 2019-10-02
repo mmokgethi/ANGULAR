@@ -15,7 +15,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
       </div>
     </div>
   `,
-  styleUrls: ['./event-thumbnail.component.css']
+  styles: [`
+    .thumbnail { min-height: 210px; }
+    .pad-left { margin-left: 10px; }
+    .well div { color: #bbb; }
+  `]
 })
 
 export class EventThumbnailComponent implements OnInit {
