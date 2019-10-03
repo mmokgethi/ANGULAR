@@ -10,6 +10,8 @@ import { EventService } from './events/shared/event.service';
 import { ToastrService } from './common/toastr.service';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { CreateEventComponent } from './events/create-event.component';
+import { ErrorsComponent } from './errors/errors.component';
+import { EventTouteActivatorService } from './events/event-details/event-toute-activator.service';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,14 @@ import { CreateEventComponent } from './events/create-event.component';
     NavbarComponent,
     EventDetailsComponent,
     CreateEventComponent,
+    ErrorsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [EventService,
-  ToastrService],
+  ToastrService, EventTouteActivatorService],
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
