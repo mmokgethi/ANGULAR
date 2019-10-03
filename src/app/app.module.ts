@@ -15,6 +15,10 @@ import { EventTouteActivatorService } from './events/event-details/event-toute-a
 import { EventsListResolverService } from './events/events-list-resolver.service';
 import { ProfileComponent } from './user/profile.component';
 
+import {
+
+} from './events/index';
+
 @NgModule({
   declarations: [
     EventsAppComponent,
