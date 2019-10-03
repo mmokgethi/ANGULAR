@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'events/:id', component: EventDetailsComponent, canActivate: [EventTouteActivatorService] },
   { path: '404', component: ErrorsComponent },
   { path: '', pathMatch: 'full', redirectTo: '/events' },
+  { path: 'user', loadChildren: './user/user.module#UserModule' },
 ];
 
 @NgModule({
