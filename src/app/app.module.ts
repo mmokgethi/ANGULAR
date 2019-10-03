@@ -12,6 +12,7 @@ import { EventDetailsComponent } from './events/event-details/event-details.comp
 import { CreateEventComponent } from './events/create-event.component';
 import { ErrorsComponent } from './errors/errors.component';
 import { EventTouteActivatorService } from './events/event-details/event-toute-activator.service';
+import { EventsListResolverService } from './events/events-list-resolver.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { EventTouteActivatorService } from './events/event-details/event-toute-a
   providers: [
     EventService,
     ToastrService,
+    EventsListResolverService,
     EventTouteActivatorService,
     {
       provide: 'canDeactivateCreateEvent',

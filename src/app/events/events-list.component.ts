@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../events/shared/event.service';
 import { ToastrService } from '../common/toastr.service';
+import { ActivatedRoute } from '@angular/router';
 
 declare let toastr;
 
@@ -14,18 +15,19 @@ declare let toastr;
           <app-event-thumbnail (click)="handleThumbnailEventClick(event.name)" [event]="event"></app-event-thumbnail>
         </div>
       </div>
+
     </div>
   `,
   styleUrls: ['./events-list.component.css']
 })
 export class EventsListComponent implements OnInit {
   events: any[];
-  constructor(private eventService: EventService, private toastr: ToastrService) {
-    this.events = this.eventService.getEvents();
+  constructor(private eventService: EventService, private toastr: ToastrService,
+              private route: ActivatedRoute) {
    }
 
   ngOnInit() {
-    this.events = this.eventService.getEvents();
+    this.events = this.route.snapshot.data['events'];
   }
 
   handleThumbnailEventClick(eventName) {
