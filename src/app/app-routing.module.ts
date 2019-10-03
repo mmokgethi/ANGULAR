@@ -8,7 +8,8 @@ import { EventTouteActivatorService } from './events/event-details/event-toute-a
 
 
 const routes: Routes = [
-  { path: 'events/new', component: CreateEventComponent },
+  { path: 'events/new', component: CreateEventComponent,
+   canDeactivate: ['canDeactivateCreateEvent'] },
   { path: 'events', component: EventsListComponent},
   { path: 'events/:id', component: EventDetailsComponent, canActivate: [EventTouteActivatorService] },
   { path: '404', component: ErrorsComponent },

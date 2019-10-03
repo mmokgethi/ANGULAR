@@ -27,8 +27,22 @@ import { EventTouteActivatorService } from './events/event-details/event-toute-a
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [EventService,
-  ToastrService, EventTouteActivatorService],
+  providers: [
+    EventService,
+    ToastrService,
+    EventTouteActivatorService,
+    {
+      provide: 'canDeactivateCreateEvent',
+      useValue: checkDirtyState
+    }
+  ],
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
+
+export function checkDirtyState(compent: CreateEventComponent) {
+  if (compent.isDirty) {
+    return window.confirm('You have not saved this event, do you really want to cancel?');
+  }
+  return true;
+}
