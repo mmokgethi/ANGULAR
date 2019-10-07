@@ -6,6 +6,7 @@ import { CreateEventComponent } from './events/create-event.component';
 import { ErrorsComponent } from './errors/errors.component';
 import { EventTouteActivatorService } from './events/event-details/event-toute-activator.service';
 import { EventsListResolverService } from './events/events-list-resolver.service';
+import { CreateSessionComponent } from './events/event-details/create-session/create-session.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'events', component: EventsListComponent,
     resolve: {events: EventsListResolverService}},
   { path: 'events/:id', component: EventDetailsComponent, canActivate: [EventTouteActivatorService] },
+  { path: 'events/session/new', component: CreateSessionComponent },
   { path: '404', component: ErrorsComponent },
   { path: '', pathMatch: 'full', redirectTo: '/events' },
   { path: 'user', loadChildren: './user/user.module#UserModule' },
