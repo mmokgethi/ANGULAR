@@ -5,11 +5,14 @@ import { AuthService } from './auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styles: [`
+    em {float: right; color:#E05C65; padding-left:10px}
+  `]
 })
 export class LoginComponent implements OnInit {
   userName;
   password;
+  mouseoverLogin;
   constructor(private authService: AuthService, private router: Router) { }
 
   login(formValues) {
