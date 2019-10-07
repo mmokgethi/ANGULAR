@@ -14,6 +14,7 @@ import { ErrorsComponent } from './errors/errors.component';
 import { EventTouteActivatorService } from './events/event-details/event-toute-activator.service';
 import { EventsListResolverService } from './events/events-list-resolver.service';
 import { AuthService } from './user/auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
 
@@ -32,6 +33,8 @@ import {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     EventService,
