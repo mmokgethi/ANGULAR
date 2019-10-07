@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { userRoutes } from './user.routes';
 import { ProfileComponent } from './profile.component';
 import { LoginComponent } from './login.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -14,6 +15,7 @@ import { LoginComponent } from './login.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild(userRoutes)
   ],
   providers: []
